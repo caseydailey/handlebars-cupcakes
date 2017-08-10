@@ -14,7 +14,7 @@ bakery.getInventory = () => inventory;
 bakery.loadInventory = ()=>{
     return new Promise((resolve,reject)=>{    
         $.ajax({
-            url: "../inventory.json"
+            url: "https://general-purpose-64025.firebaseio.com/ccakes.json"
         }).done(data => resolve(data))
           .fail(error => reject(error));
     });
