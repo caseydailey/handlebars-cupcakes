@@ -9,13 +9,22 @@ let bakery = {};
 // to return the inventory
 bakery.getInventory = () => inventory;
 
+// helper to push the firebase objects to inventory
+function fillInventory (data) {
+    data.forEach((cake)=>inventory.push(cake));
+}
+
 
 // load data
 bakery.loadInventory = ()=>{
     return new Promise((resolve,reject)=>{    
         $.ajax({
             url: "https://general-purpose-64025.firebaseio.com/ccakes.json"
-        }).done(data => resolve(data))
+        }).done(data => {
+            console.log("data:", data);
+            fillInventory(data);
+            resolve(data);
+        })
           .fail(error => reject(error));
     });
 };
@@ -1231,7 +1240,7 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
     var stack1;
 
   return "\n\n"
-    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.ccakes : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\n";
 },"useData":true});
 
