@@ -1,0 +1,17 @@
+<h2>{{name}}!</h2>
+<p>
+  We bake the most delicious cake varieties like  
+  {{#each cakeType}}
+    {{cake}} {{topping}}
+    {{!-- unless this is the last one, put a comma --}}
+    {{#unless @last}}
+      ,
+    {{/unless}}
+    {{!-- if it is the last one, put a period --}}
+    {{#if @last}}
+    .
+    {{/if}}
+  {{/each}}
+</p>
+
+{{!-- {{> footer}} --}}

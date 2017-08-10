@@ -7,14 +7,16 @@
       "kind": "Blue",
       "flavor": "Cream",
       "price": "12/dozen"
-    },{
+    },
+    {
       "image": "images/chococupcake.jpg",
       "description": "Sweet roll marzipan halvah ice cream cupcake tiramisu danish cotton candy cake.",
       "purchased": false,
       "kind": "choco",
       "flavor": "Chocolate",
       "price": "5.00/six"
-    },{
+    },
+    {
       "image": "images/cupcake.jpg",
       "description": "Chupa chups gummi chocolate tiramisu bonbon caramels toffee marzipan soufflé.",
       "purchased": true,
